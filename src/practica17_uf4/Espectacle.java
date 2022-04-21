@@ -18,7 +18,10 @@ public class Espectacle {
     }
     Recintes r = new Recintes();
     public String TipusEspectacle(String TipEs) {
-        int[][] matriu = new int[4][6];
+        int pisos = (int)(Math.random()*4+1);
+        int files = 4;
+        int columnes = 6;
+        int[][] matriu = new int[files][columnes];
         switch (TipEs) {
             case "Pelicula":
                 r.setPatiButaques(matriu);
@@ -28,14 +31,19 @@ public class Espectacle {
             case "Obra Teatral":
                 r.setPatiButaques(matriu);
                 System.out.println(Arrays.deepToString(matriu));
+                r.setLlotges(5);
                 break;
                 
             case "Opera":
-
+                r.setPatiButaques(matriu);
+                System.out.println(Arrays.deepToString(matriu));
+                r.setLlotges(pisos);
+                System.out.println(pisos);
                 break;
                 
             case "Prova Esportiva":
-
+                r.setLlotges(pisos);
+                System.out.println(pisos);
                 break;
                 
             default:
