@@ -1,8 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+/*Els diferents tipus d’espectacles són:
+- Pel·lícula: només fa servir el pati de butaques
+- ObraTeatral: habilita les llotges i pati de butaques
+- Òpera: habilita les llotges i pati de butaques
+- Prova Esportiva: només habilita les llotges*/
 package practica17_uf4;
+
+import java.util.Arrays;
 
 /**
  *
@@ -15,22 +18,26 @@ public class Espectacle {
     }
     Recintes r = new Recintes();
     public String TipusEspectacle(String TipEs) {
+        int[][] matriu = new int[4][6];
         switch (TipEs) {
             case "Pelicula":
-                int[][] matriu;
-                r.setPatiButaques(matriu[4][6]);
-
+                r.setPatiButaques(matriu);
+                System.out.println(Arrays.deepToString(matriu));
                 break;
 
             case "Obra Teatral":
-
+                r.setPatiButaques(matriu);
+                System.out.println(Arrays.deepToString(matriu));
                 break;
+                
             case "Opera":
 
                 break;
+                
             case "Prova Esportiva":
 
                 break;
+                
             default:
                 break;
         }

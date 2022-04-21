@@ -16,7 +16,7 @@ public class Recintes {
     Scanner s = new Scanner(System.in);
     private int llotges;
     private int pisos;
-    private int pati_butaques;
+    private int[][] pati_butaques;
     private int files;
     private int columnes;
     
@@ -36,10 +36,10 @@ public class Recintes {
         public int getPisos(){
         return pisos; 
     }
-    public void setPatiButaques(int patibutaques){
+    public void setPatiButaques(int[][] patibutaques){
         this.pati_butaques = patibutaques;
     }
-        public int getPatiButaques(){
+        public int[][] getPatiButaques(){
         return pati_butaques; 
     }
     public void setFiles(int files){
