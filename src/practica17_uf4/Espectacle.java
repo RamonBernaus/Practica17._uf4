@@ -20,23 +20,21 @@ public class Espectacle {
     Scanner s = new Scanner(System.in);
 
     public String TipusEspectacle(String TipEs) {
-        int pisos = (int) (Math.random() * 4 + 1);
-        int[][] matriu = new int[1][1];
+        String res = "";
         String str;
         switch (TipEs) {
             case "Pelicula":
-                System.out.println(Omplirfiles());
-                r.setPatiButaques(matriu);
+                str = "butaca";
+                System.out.println(r.OmplirMatriu(str));
                 break;
 
             case "Obra Teatral":
                 System.out.println("Vols anar a les llotges o a les butaques?");
                 str = s.nextLine();
                 if (str.equals("butaques") || str.equals("butaca")) {
-                    System.out.println(Omplirfiles());
-                } else if (str.equals("butaques")) {
-                    r.setLlotges(pisos);
-                    System.out.println(pisos);
+                    System.out.println(r.OmplirMatriu(str));
+                } else if (str.equals("llotges")) {
+                    System.out.println(r.OmplirMatriu(str));
                 }
                 break;
 
@@ -44,84 +42,53 @@ public class Espectacle {
                 System.out.println("Vols anar a les llotges o a les butaques?");
                 str = s.nextLine();
                 if (str.equals("butaques") || str.equals("butaca")) {
-                    System.out.println(Omplirfiles());
-                } else if (str.equals("butaques")) {
-                    r.setLlotges(pisos);
-                    System.out.println(pisos);
+                    System.out.println(r.OmplirMatriu(str));
+                } else if (str.equals("llotges")) {
+                    System.out.println(r.OmplirMatriu(str));
                 }
 
                 break;
 
             case "Prova Esportiva":
-                r.setLlotges(pisos);
-                System.out.println(pisos);
+                str = "llotges";
+                System.out.println(r.OmplirMatriu(str));
                 break;
 
             default:
                 break;
         }
 
-        return TipEs;
+        return res;
     }
-
-    public String Omplirfiles() {
-        String str = "";
-        int files = (int) (Math.random() * 8 + 2);
-        int columnes = (int) (Math.random() * 8 + 1);
-        int[][] matriu = new int[files][columnes];
-        for (int x = 0; x < matriu.length; x++) {
-            System.out.print(x + 1 + " |");
-            for (int y = 0; y < matriu[x].length; y++) {
-                matriu[x][y] = (int) (Math.random() * 2);
-                switch (matriu[x][y]) {
-                    case 0:
-                        System.out.print("  X  ");
-                        break;
-                    case 1:
-                        System.out.print(" [ ] ");
-                        break;
-                    default:
-                        break;
-                }
-                if (y != matriu[x].length - 1) {
-                    System.out.print("\t");
-                }
-            }
-            System.out.println("|");
+public String ToString(){
+        String Espectacle;
+        String Recinte;
+String str = "";
+        System.out.println("En quin Recinte vols anar? " + "\n"
+                + "Al Liceu, al Teatre o al Palau d'esports?");
+        Recinte = s.nextLine();
+        switch (Recinte) {
+            case "Liceu":
+                System.out.println("Quin espectacle vols anar a veure? " + "\n"
+                        + "A veure una Pelicula, a l'Obra Teatral o a l'Opera?");
+                Espectacle = s.nextLine();
+                System.out.println(TipusEspectacle(Espectacle));
+                break;
+            case "Teatre":
+                System.out.println("Quin espectacle vols anar a veure? " + "\n"
+                        + "A veure una Pelicula o a l'Obra Teatral?");
+                Espectacle = s.nextLine();
+                System.out.println(TipusEspectacle(Espectacle));
+                break;
+            case "Palau d'esports":
+                System.out.println("Quin espectacle vols anar a veure? " + "\n"
+                        + "A veure una Pelicula, a l'Obra Teatral, a l'Opera o a una Prova esportiva?");
+                Espectacle = s.nextLine();
+                System.out.println(TipusEspectacle(Espectacle));
+                break;
+            default:
+                break;
         }
-        System.out.println("");
-        Reserva(files, columnes);
-
         return str;
-    }
-
-    public int Reserva(int fila, int columna) {
-        int fila_res, colum_res;
-        System.out.println("Els seient amb una X estan ja ocupats, els seients amb un [ ] estan lliures. ");
-        System.out.print("En quina de les " + fila + " files vols seure? ");
-        fila_res = s.nextInt();
-        System.out.print("En quin dels  " + columna + " seients vols seure? ");
-        colum_res = s.nextInt();
-
-        return 0;
-    }
-
-    public int RecorrerMatriu(int matriu[][]) {
-        for (int i = 0; i < matriu.length; i++) {
-
-            System.out.print(i + 1 + " |");
-
-            for (int j = 0; j < matriu[i].length; j++) {
-
-                System.out.print(matriu[i][j]);
-
-                if (j != matriu[i].length - 1) {
-
-                    System.out.print("\t");
-                }
-            }
-            System.out.println("|");
-        }
-        return 0;
     }
 }
