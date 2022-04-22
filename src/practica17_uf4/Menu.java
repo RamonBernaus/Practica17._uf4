@@ -13,6 +13,7 @@ public class Menu {
         Scanner s = new Scanner(System.in);
         Recintes r = new Recintes();
         Espectacle e = new Espectacle();
+        int[][] matriu = new int[1][1];
         String Espectacle;
         String Recinte;
         System.out.println("En quin Recinte vols anar? " + "\n"
@@ -40,6 +41,7 @@ public class Menu {
             default:
                 break;
         }
+        
     }
 
 }
